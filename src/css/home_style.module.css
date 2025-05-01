@@ -1,0 +1,187 @@
+.sectionTitle {
+  width: 85%;
+  height: 100px;
+  border-radius: 1.5rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  color: rgb(100, 100, 100);
+  font-weight: 100;
+  letter-spacing: 1.4em;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.sectionTitleWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.9rem;
+}
+
+.itemsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+}
+
+.itemType {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.itemsRow {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  max-width: 100%;
+  margin: 0 auto;
+
+  padding: 0.9rem;
+  gap: 2rem;
+
+  scrollbar-width: none;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 100%;
+  scroll-snap-align: center;
+
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+}
+
+.itemPhoto {
+  width: 30%;
+  border-radius: 1.5rem;
+  background-color: white;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+
+  transition: all 200ms linear;
+}
+
+.itemPhoto:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.itemInfo {
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  background-color: white;
+  background-image: url(../img/backgrounds/xolmik.png);
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.h {
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+.h2 {
+  color: rgb(120, 120, 120)
+}
+
+.colorPick {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 30%;
+  outline: 2px solid rgb(90, 90, 90);
+  outline-offset: 3px;
+
+  transition: all 200ms linear;
+}
+
+.colorPick:hover {
+  transform: translateY(-0.085rem);
+}
+
+.colorBlack {
+  background-color: rgb(35, 35, 35);
+}
+
+.colorWhite {
+  background-color: rgb(233, 233, 233);
+}
+
+.button {
+  width: 10rem;
+  height: 4rem;
+
+  font-size: 1.1rem;
+  color: white;
+  background-color: rgb(175, 85, 110);
+  border: 0;
+  border-radius: 1.4rem;
+
+  transition: all 200ms linear;
+}
+
+.button:hover {
+  background-color: rgb(220, 130, 160);
+  transform: scale(1.01);
+  cursor: pointer;
+
+  box-shadow: 0px 0px 15px rgba(205, 100, 130, 0.5);
+
+}
+
+.viewMore {
+  align-self: flex-end;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 85%;
+}
+
+.carouselBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(175, 85, 110);
+  border: none;
+  border-radius: 1.2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease;
+}
+
+.carouselBtn:hover {
+  background-color: rgb(220, 130, 160);
+  transform: scale(1.01);
+  cursor: pointer;
+
+  box-shadow: 0px 0px 15px rgba(205, 100, 130, 0.5);
+}

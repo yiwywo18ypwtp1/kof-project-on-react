@@ -1,0 +1,138 @@
+/* COLORS COLORS COLORS */
+
+.red {
+  background-color: rgb(175, 85, 110);
+}
+
+.red:hover {
+  box-shadow: 0px 0px 15px rgba(175, 85, 110, 0.5);
+}
+
+.yellow {
+  background-color: rgb(204, 163, 29);
+}
+
+.yellow:hover {
+  box-shadow: 0px 0px 15px rgba(204, 163, 29, 0.5);
+}
+
+.blue {
+  background-color: rgb(33, 139, 226);
+}
+
+.blue:hover {
+  box-shadow: 0px 0px 15px rgba(33, 139, 226, 0.5);
+}
+
+/* ======================= */
+
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  width: 85%;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+}
+
+.itemPhoto {
+  width: 30%;
+  border-radius: 1.5rem;
+  background-color: white;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+
+  transition: all 200ms linear;
+}
+
+.itemPhoto:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.itemInfo {
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  background-color: white;
+  background-image: url(../img/backgrounds/buy_it_pls_red.png);
+  background-repeat: no-repeat;
+  background-size: 76%;
+  background-position-x: right;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.h {
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.h2 {
+  color: rgb(120, 120, 120)
+}
+
+.orderBtn {
+  width: 10rem;
+  height: 4rem;
+
+  font-size: 1.1rem;
+  color: white;
+  border: 0;
+  border-radius: 1.4rem;
+
+  transition: all 200ms linear;
+}
+
+.orderBtn:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.colorPick,
+.sizePick {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+
+  margin-bottom: 1rem;
+}
+
+.colorChoose {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.colorChoose:hover {
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.sizeChoose {
+  width: fit-content;
+  height: 1.5rem;
+  padding: 0px 10px;
+  border-radius: 0.5rem;
+}
+
+.sizeChoose:hover {
+  cursor: pointer;
+}
+
+.inStock {
+  border: 1px solid rgb(120, 120, 120);
+}
+
+.outOfStock {
+  pointer-events: none;
+  border: 1px dashed rgb(120, 120, 120);
+}
