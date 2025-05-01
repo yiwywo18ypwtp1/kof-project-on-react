@@ -12,8 +12,6 @@ import blueTshirtImg from '../img/black_tshirt/fytbolka_black_blue.png'
 import blueTshirtImgBack from '../img/black_tshirt/fytbolka_black_blue_back.png'
 
 
-
-
 function BlackTshirtPage(props) {
   const [color, setColor] = useState('yellow');
   const [size, setSize] = useState('M');
@@ -83,8 +81,6 @@ function BlackTshirtPage(props) {
       </div >
     </>
   );
-
-
 }
 
 export default BlackTshirtPage
