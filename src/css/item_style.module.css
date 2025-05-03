@@ -2,26 +2,29 @@
 
 .red {
   background-color: rgb(175, 85, 110);
+  border: 0.1rem solid rgb(175, 85, 110);
 }
 
 .red:hover {
-  box-shadow: 0px 0px 15px rgba(175, 85, 110, 0.5);
+  box-shadow: 0px 0px 15px rgba(175, 85, 110, 0.75);
 }
 
 .yellow {
   background-color: rgb(204, 163, 29);
+  border: 0.1rem solid rgb(204, 163, 29);
 }
 
 .yellow:hover {
-  box-shadow: 0px 0px 15px rgba(204, 163, 29, 0.5);
+  box-shadow: 0px 0px 15px rgba(204, 163, 29, 0.75);
 }
 
 .blue {
   background-color: rgb(33, 139, 226);
+  border: 0.1rem solid rgb(33, 139, 226);
 }
 
 .blue:hover {
-  box-shadow: 0px 0px 15px rgba(33, 139, 226, 0.5);
+  box-shadow: 0px 0px 15px rgba(33, 139, 226, 0.75);
 }
 
 /* ======================= */
@@ -40,7 +43,7 @@
 }
 
 .itemPhoto {
-  width: 30%;
+  width: 35%;
   border-radius: 1.5rem;
   background-color: white;
 
@@ -50,7 +53,6 @@
 }
 
 .itemPhoto:hover {
-  transform: scale(1.01);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
 }
 
@@ -59,16 +61,28 @@
   border-radius: 1.5rem;
   padding: 3rem;
   background-color: white;
-  background-image: url(../img/backgrounds/buy_it_pls_red.png);
   background-repeat: no-repeat;
-  background-size: 76%;
-  background-position-x: right;
+  background-size: 75%;
+  background-position-x: 80%;
+  background-position-y: 105%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.bgred {
+  background-image: url(../img/backgrounds/buy_it_pls_red.png);
+}
+
+.bgyellow {
+  background-image: url(../img/backgrounds/buy_it_pls_yellow.png);
+}
+
+.bgblue {
+  background-image: url(../img/backgrounds/buy_it_pls_blue.png);
 }
 
 .h {
@@ -110,6 +124,9 @@
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.5rem;
+
+  outline: 0.15rem solid rgba(150, 150, 150, 0);
+  outline-offset: 0.2rem;
 }
 
 .colorChoose:hover {
@@ -117,22 +134,128 @@
   box-shadow: none;
 }
 
+.selectedColor {
+  outline: 0.15rem solid rgb(150, 150, 150);
+  outline-offset: 0.2rem;
+
+  transition: transform 350ms linear, outline 200ms linear;
+  transform: translateY(-0.2rem);
+}
+
 .sizeChoose {
   width: fit-content;
   height: 1.5rem;
-  padding: 0px 10px;
+  padding: 0px 0.6rem;
   border-radius: 0.5rem;
+
+  outline: 0.1rem solid rgba(120, 120, 120, 0);
+  outline-offset: 0.1rem;
+
+  border: 1px solid rgb(120, 120, 120);
 }
 
 .sizeChoose:hover {
   cursor: pointer;
 }
 
-.inStock {
-  border: 1px solid rgb(120, 120, 120);
+.selectedSize {
+  transition: transform 350ms linear, outline 200ms linear;
+
+  border: 0;
+  outline: 0.1rem solid rgb(120, 120, 120);
+  transform: translateY(-0.1rem);
 }
 
 .outOfStock {
   pointer-events: none;
   border: 1px dashed rgb(120, 120, 120);
+  color: rgb(120, 120, 120);
+  opacity: 50%;
+}
+
+
+/* ITEM DETAILS ITEM DETAILS ITEM DETAILS ITEM DETAILS */
+.itemDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+}
+
+.description {
+  width: 50%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.description div span {
+  color: rgb(120, 120, 120);
+}
+
+.description a {
+  color: rgb(175, 45, 100);
+  text-decoration: none;
+
+  transition: all 200ms linear;
+}
+
+.description a:hover {
+  color: rgb(175, 75, 110);
+  text-shadow: 0px 0px 5px rgba(175, 45, 100, 0.5);
+  cursor: pointer;
+}
+
+.delivery {
+  width: 50%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.085);
+}
+
+.deliveryTable {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  border-left: 1px solid rgb(144, 144, 144);
+  border-right: 1px solid rgb(144, 144, 144);
+  border-bottom: 1px solid rgb(144, 144, 144);
+  border-top: 1px solid rgb(144, 144, 144);
+
+  border-radius: 25px;
+  overflow: hidden;
+  /* Скрываем части ячеек, которые выходят за пределы закругленных углов */
+  width: 100%;
+}
+
+.deliveryTable img {
+  width: 100px;
+}
+
+.deliveryTable {
+  color: rgb(92, 92, 92);
+  ;
+}
+
+.deliveryTable th,
+.deliveryTable td {
+  padding: 10px;
+  text-align: center;
+}
+
+.deliveryCity {
+  text-align: center;
+  border-bottom: 1px solid rgb(144, 144, 144);
+}
+
+.deliveryCity:hover {
+  cursor: pointer;
+  font-weight: bold;
 }
