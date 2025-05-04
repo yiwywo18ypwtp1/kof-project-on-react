@@ -2,14 +2,14 @@ import { React, useState } from 'react'
 import Header from './Header';
 import styles from '../css/item_style.module.css';
 
-import redTshirtImg from '../img/black_tshirt/fytbolka_black_red.png'
-import redTshirtImgBack from '../img/black_tshirt/fytbolka_black_red_back_ver_3.png'
+import redTshirtImg from '../img/white_tshirt/fytbolka_white_red.png'
+import redTshirtImgBack from '../img/white_tshirt/fytbolka_white_red_back.png'
 
-import yellowTshirtImg from '../img/black_tshirt/fytbolka_black_yellow.png'
-import yellowTshirtImgBack from '../img/black_tshirt/fytbolka_black_yellow_back_ver_3.png'
+import yellowTshirtImg from '../img/white_tshirt/fytbolka_white_yellow.png'
+import yellowTshirtImgBack from '../img/white_tshirt/fytbolka_white_yellow_back.png'
 
-import blueTshirtImg from '../img/black_tshirt/fytbolka_black_blue.png'
-import blueTshirtImgBack from '../img/black_tshirt/fytbolka_black_blue_back_ver_3.png'
+import blueTshirtImg from '../img/white_tshirt/fytbolka_white_blue.png'
+import blueTshirtImgBack from '../img/white_tshirt/fytbolka_white_blue_back.png'
 
 import npLogo from '../img/novaposhta_logo.png'
 import ukrLogo from '../img/ukrposhta.png'
@@ -89,7 +89,7 @@ function BlackTshirtPage(props) {
               <h3 className={styles.h}>Description:</h3>
               <p>Type: Tshirt</p>
               <p>Материал: 90% Cotton | 10% Polyester</p>
-              <p>Color: Black</p>
+              <p>Color: White</p>
               <p>Season: Spring / Summer</p>
             </div>
 

@@ -1,6 +1,4 @@
-import { React, useContext } from 'react'
+import { createContext } from 'react';
 
-
-const UserContext = useContext('no cotext')
-
-export default UserContext
+export const UserContext = createContext(null);
+export const OrderContext = createContext(null);

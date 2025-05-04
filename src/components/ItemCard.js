@@ -29,8 +29,8 @@ function ItemCard(props) {
       <div className={styles.item}>
         <div className={styles.itemInfo}>
           <div>
-            <h1 className={styles.h}>T-shirt «Papa, Papa & Ya»</h1>
-            <h2 className={`${styles.h} ${styles.h2}`}>₴ 630</h2>
+            <h1 className={styles.h}>Sweetshot «Papa, Papa & Ya»</h1>
+            <h2 className={`${styles.h} ${styles.h2}`}>₴ 1350</h2>
             <h4 className={styles.h}>Color:</h4>
             <div className={`${styles.colorPick} ${styles[`color${props.color}`]}`}></div>
           </div>
