@@ -13,6 +13,7 @@ import blackSweetshort from '../img/black_sweetshot/sweet_black_red.png'
 import whiteSweetshort from '../img/white_sweetshot/sweet_white_red.png'
 
 import styles from '../css/home_style.module.css'
+import TimerExample from './TimerExample';
 
 
 function HomePage() {
@@ -44,6 +45,7 @@ function HomePage() {
   return (
     <>
       <Header />
+      <TimerExample />
 
       <div className={styles.itemsColumn}>
         {/* tshirts */}

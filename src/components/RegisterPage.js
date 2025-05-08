@@ -1,7 +1,7 @@
-import { React, useContext, useState } from 'react'
+import { React, useState, useContext } from 'react'
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
-
 import { UserContext } from './KofContext';
 
 import styles from '../css/sign_style.module.css';
@@ -9,48 +9,43 @@ import styles from '../css/sign_style.module.css';
 
 function RegisterPage() {
   const navigate = useNavigate()
+  const { setUser } = useContext(UserContext); // используем setUser из контекста
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
 
-  // class User {
-  //   constructor(name, password) {
-  //     this.userName = name
-  //     this.userPassword = password
-  //   }
-  // }
-  // const { user, setUser } = useContext(UserContext);
-
   function handleRegister(e) {
     e.preventDefault(); // чтобы не перезагружалась страница
 
-    if (username && password) {
-      fetch('http://localhost:8000/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: username,
-          email: username + "@example.com", // временно, если email нет на форме
-          password: password
-        })
-      })
+    if (username && password && email) {
+      // Используем axios для запроса регистрации
+      axios.post('http://localhost:8000/register', {
+        username: username,
+        email: email,
+        password: password
+      }, { withCredentials: true })
         .then(res => {
-          if (!res.ok) {
-            return res.json().then(data => { throw new Error(data.detail) });
-          }
-          return res.json();
-        })
-        .then(data => {
-          alert(data.message); // или перенаправляй пользователя
+          alert(res.data.message);
+
+          // После регистрации делаем запрос к /user с axios
+          // axios.get('http://localhost:8000/user', { withCredentials: true })
+          //   .then(userData => {
+          //     setUser(userData.data);  // Обновляем user в контексте
+          //     // navigate('/');
+          //   })
+          //   .catch(err => {
+          //     console.error("Error fetching user:", err);
+          //     alert("Error fetching user data");
+          //   });
+
           setUsername('');
           setPassword('');
-          navigate('/');
+          navigate('/test');
         })
         .catch(err => {
-          alert('Error: ' + err.message);
+          console.error("Axios error:", err);
+          alert('Error: ' + err.response?.data?.detail || err.message);
         });
     }
     else {
@@ -65,33 +60,33 @@ function RegisterPage() {
       <div className={styles.mainContainer}>
         <div className={styles.form}>
           <form action="" method="">
-            <label for="">Username</label>
+            <label>Username</label>
             <input
               className={styles.input}
               type="text"
-              required="true"
+              required={true}
               placeholder="kill$rPro_1337"
 
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
 
-            <label for="">Email</label>
+            <label>Email</label>
             <input
               className={styles.input}
               type="email"
-              required="true"
+              required={true}
               placeholder="example@gmail.com"
 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <label for="">Password</label>
+            <label>Password</label>
             <input
               className={styles.input}
               type="password"
-              required="true"
+              required={true}
               placeholder="qwerty123"
 
               value={password}
